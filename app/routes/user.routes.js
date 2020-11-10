@@ -1,5 +1,6 @@
 module.exports = app => {
     const users = require("../controllers/user.controller.js");
+    const reflections = require("../controllers/reflection.controller.js");
 
     var router = require("express").Router();
 
@@ -20,6 +21,9 @@ module.exports = app => {
 
     // Delete all Users
     router.delete("/", users.deleteAll);
+
+    // Create a new Reflection with user id
+    router.post("/:id/reflections", reflections.create);
 
     app.use('/api/users', router);
 };
