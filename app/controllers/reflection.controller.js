@@ -30,16 +30,15 @@ exports.create = (req, res) => {
 
 
 
-/*
-// Retrieve all Reflections from the database.
+// Retrieve all Reflections from the database with user id.
 exports.findAll = (req, res) => {
-    const name = req.query.name;
-    var condition = name ? { name: { $regex: new RegExp(name), $options: "i" } } : {};
+    const id = req.params.id;
 
-    Reflection.find(condition)
+    Reflection.find({ user_id: id})
     .then(data => {
         res.send(data);
     })
+    // 存在しないuser_idでリクエスト投げると、エラーじゃなくて空の配列が返ってきてしまう。。
     .catch(err => {
         res.status(500).send({
             message:
@@ -48,6 +47,7 @@ exports.findAll = (req, res) => {
     });
 };
 
+/*
 // Find a single Reflection with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;

@@ -25,5 +25,8 @@ module.exports = app => {
     // Create a new Reflection with user id
     router.post("/:id/reflections", reflections.create);
 
+    // Retrieve all Reflections with user id
+    router.get("/:id/reflections", reflections.findAll);
+
     app.use('/api/users', router);
 };

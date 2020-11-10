@@ -3,12 +3,6 @@ module.exports = app => {
 
     var router = require("express").Router();
 
-    // Create a new Reflection
-    router.post("/", reflections.create);
-
-    // Retrieve all Reflections
-    router.get("/", reflections.findAll);
-
     // Retrieve a single Reflection with id
     router.get("/:id", reflections.findOne);
 
