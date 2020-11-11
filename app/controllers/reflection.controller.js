@@ -32,9 +32,9 @@ exports.create = (req, res) => {
 
 // Retrieve all Reflections from the database with user id.
 exports.findAll = (req, res) => {
-    const id = req.params.id;
+    const user_id = req.params.id;
 
-    Reflection.find({ user_id: id})
+    Reflection.find({ user_id: user_id})
     .then(data => {
         res.send(data);
     })
