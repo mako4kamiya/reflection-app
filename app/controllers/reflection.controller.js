@@ -47,7 +47,6 @@ exports.findAll = (req, res) => {
     });
 };
 
-/*
 // Find a single Reflection with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
@@ -65,6 +64,7 @@ exports.findOne = (req, res) => {
         });
 };
 
+/*
 // Update a Reflection by the id in the request
 exports.update = (req, res) => {
     if (!req.body) {
