@@ -6,6 +6,7 @@ module.exports = app => {
     // Retrieve a single Reflection with id
     router.get("/:id", reflections.findOne);
 
+/*
     // Update a Reflection with id
     router.put("/:id", reflections.update);
 
@@ -14,6 +15,7 @@ module.exports = app => {
 
     // Delete all Reflections
     router.delete("/", reflections.deleteAll);
+*/
 
     app.use('/api/reflections', router);
 };
