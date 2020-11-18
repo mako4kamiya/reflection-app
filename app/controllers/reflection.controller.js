@@ -64,7 +64,6 @@ exports.findOne = (req, res) => {
         });
 };
 
-/*
 // Update a Reflection by the id in the request
 exports.update = (req, res) => {
     if (!req.body) {
@@ -90,6 +89,7 @@ exports.update = (req, res) => {
     });
 };
 
+/*
 // Delete a Reflection with the specified id in the request
 exports.delete = (req, res) => {
     const id = req.params.id;
