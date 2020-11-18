@@ -112,7 +112,6 @@ exports.delete = (req, res) => {
         });
 };
 
-/*
 // Delete all Reflections from the database.
 exports.deleteAll = (req, res) => {
     Reflection.deleteMany({})
@@ -128,5 +127,3 @@ exports.deleteAll = (req, res) => {
         });
     });
 };
-
-*/
