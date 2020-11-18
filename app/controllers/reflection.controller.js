@@ -127,3 +127,17 @@ exports.deleteAll = (req, res) => {
         });
     });
 };
+
+// find todays Reflections by createdAt
+exports.findTodays = (req, res) => {
+    Reflection.find({ createdAt: "2020-11-18T13:31:24.800Z" })//今日の日付をどう指定するか
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                err.message || "Some error occurred while retrieving reflection."
+            });
+        });
+};
