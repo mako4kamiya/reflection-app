@@ -12,10 +12,8 @@ module.exports = app => {
     // Delete a Reflection with id
     router.delete("/:id", reflections.delete);
 
-/*
     // Delete all Reflections
     router.delete("/", reflections.deleteAll);
-*/
 
     app.use('/api/reflections', router);
 };
