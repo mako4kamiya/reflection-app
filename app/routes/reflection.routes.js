@@ -9,10 +9,10 @@ module.exports = app => {
     // Update a Reflection with id
     router.put("/:id", reflections.update);
 
-/*
     // Delete a Reflection with id
     router.delete("/:id", reflections.delete);
 
+/*
     // Delete all Reflections
     router.delete("/", reflections.deleteAll);
 */
