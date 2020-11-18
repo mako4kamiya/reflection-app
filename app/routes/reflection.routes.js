@@ -3,6 +3,9 @@ module.exports = app => {
 
     var router = require("express").Router();
 
+    // find todays Reflections by createdAt
+    router.get("/today", reflections.findTodays);
+
     // Retrieve a single Reflection with id
     router.get("/:id", reflections.findOne);
 
