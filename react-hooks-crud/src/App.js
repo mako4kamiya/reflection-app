@@ -3,12 +3,12 @@ import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import AddReflection from "./components/ReflectionComponent/AddReflection";
-import Reflection from "./components/ReflectionComponent/Reflection";
+import UserLogin from "./components/UserComponent/UserLogin";
 import AddUser from "./components/UserComponent/AddUser";
 import User from "./components/UserComponent/User";
-import UserLogin from "./components/UserComponent/UserLogin";
 import UserList from "./components/UserComponent/UsersList";
+import AddReflection from "./components/ReflectionComponent/AddReflection";
+import Reflection from "./components/ReflectionComponent/Reflection";
 
 function App() {
   return (
@@ -19,8 +19,18 @@ function App() {
         </a>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
-            <Link to={"/tutorials"} className="nav-link">
-              Tutorials
+            <Link to={"/login"} className="nav-link">
+              Login
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to={"/signup"} className="nav-link">
+              Signup
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to={"/users"} className="nav-link">
+              Users
             </Link>
           </li>
           <li className="nav-item">
@@ -33,9 +43,12 @@ function App() {
 
       <div className="container mt-3">
         <Switch>
-          <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
-          <Route exact path="/add" component={AddTutorial} />
-          <Route path="/tutorials/:id" component={Tutorial} />
+          <Route exact path="/login" component={UserLogin} />
+          <Route exact path="/signup" component={AddUser} />
+          <Route exact path="/user/:id" component={User} />
+          <Route exact path="/users" component={UsersList} />
+          <Route exact path="/add" component={AddReflection} />
+          <Route exact path="/reflections/:id" component={Reflection} />
         </Switch>
       </div>
     </div>
