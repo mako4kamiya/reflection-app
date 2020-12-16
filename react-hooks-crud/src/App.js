@@ -6,7 +6,7 @@ import "./App.css";
 import UserLogin from "./components/UserComponent/UserLogin";
 import AddUser from "./components/UserComponent/AddUser";
 import User from "./components/UserComponent/User";
-import UserList from "./components/UserComponent/UsersList";
+import UsersList from "./components/UserComponent/UsersList";
 import AddReflection from "./components/ReflectionComponent/AddReflection";
 import Reflection from "./components/ReflectionComponent/Reflection";
 
@@ -14,8 +14,8 @@ function App() {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/tutorials" className="navbar-brand">
-          bezKoder
+        <a href="/" className="navbar-brand">
+          Reflection App
         </a>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
@@ -43,7 +43,6 @@ function App() {
 
       <div className="container mt-3">
         <Switch>
-          <Route exact path="/login" component={UserLogin} />
           <Route exact path="/signup" component={AddUser} />
           <Route exact path="/user/:id" component={User} />
           <Route exact path="/users" component={UsersList} />
