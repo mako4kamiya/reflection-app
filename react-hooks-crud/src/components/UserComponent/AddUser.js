@@ -1,34 +1,38 @@
 import React, { useState } from "react";
-import UserService from "../services/UserService";
+import UserDataService from "../../services/UserService";
 
 const AddUser = () => {
-  const initialTutorialState = {
+  const initialUserState = {
     id: null,
-    title: "",
-    description: "",
-    published: false
+    name: "",
+    password: "",
+    vocation: "",
+    meaning:""
   };
-  const [tutorial, setTutorial] = useState(initialTutorialState);
+  const [user, setUser] = useState(initialUserState);
   const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = event => {
     const { name, value } = event.target;
-    setTutorial({ ...tutorial, [name]: value });
+    setUser({ ...user, [name]: value });
   };
 
-  const saveTutorial = () => {
+  const saveUser = () => {
     var data = {
-      title: tutorial.title,
-      description: tutorial.description
+      name: user.name,
+      password: user.password,
+      vocation: user.vocation,
+      meaning:user.meaning
     };
 
-    TutorialDataService.create(data)
+    UserDataService.create(data)
       .then(response => {
-        setTutorial({
+        setUser({
           id: response.data.id,
-          title: response.data.title,
-          description: response.data.description,
-          published: response.data.published
+          name: response.data.name,
+          password: response.data.password,
+          vocation: response.data.vocation,
+          meaning:response.data.meaning
         });
         setSubmitted(true);
         console.log(response.data);
@@ -38,14 +42,79 @@ const AddUser = () => {
       });
   };
 
-  const newTutorial = () => {
-    setTutorial(initialTutorialState);
+  const newUser = () => {
+    setUser(initialUserState);
     setSubmitted(false);
   };
 
   return (
-    // ...
+  
+    <div className="submit-form">
+      {submitted ? (
+        <div>
+          <h4>You submitted successfully!</h4>
+          <button className="btn btn-success" onClick={newUser}>
+            Add
+          </button>
+        </div>
+      ) : (
+        <div>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              required
+              value={user.name}
+              onChange={handleInputChange}
+              name="name"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="text"
+              className="form-control"
+              id="password"
+              required
+              value={user.password}
+              onChange={handleInputChange}
+              name="password"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="vocation">Vocation</label>
+            <input
+              type="text"
+              className="form-control"
+              id="vocation"
+              required
+              value={user.vocation}
+              onChange={handleInputChange}
+              name="vocation"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="meaning">Meaning</label>
+            <input
+              type="text"
+              className="form-control"
+              id="meaning"
+              required
+              value={user.meaning}
+              onChange={handleInputChange}
+              name="meaning"
+            />
+          </div>
+          <button onClick={saveUser} className="btn btn-success">
+            Submit
+          </button>
+        </div>
+      )}
+    </div>
+
   );
 };
 
-export default AddTutorial;
+export default AddUser;
