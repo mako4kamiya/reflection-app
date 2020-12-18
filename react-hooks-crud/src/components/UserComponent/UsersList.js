@@ -6,16 +6,10 @@ const UsersList = () => {
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(-1);
-  const [searchTitle, setSearchTitle] = useState("");
 
   useEffect(() => {
     retrieveUsers();
   }, []);
-
-  const onChangeSearchTitle = e => {
-    const searchTitle = e.target.value;
-    setSearchTitle(searchTitle);
-  };
 
   const retrieveUsers = () => {
     UserDataService.getAll()
@@ -99,7 +93,7 @@ const UsersList = () => {
               </label>{" "}
               {currentUser.meaning}
             </div>
-
+            <p>{currentUser.name}</p>
             <Link
               to={"/user/" + currentUser.id}
               className="badge badge-warning"

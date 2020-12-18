@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -44,7 +44,7 @@ function App() {
       <div className="container mt-3">
         <Switch>
           <Route exact path="/signup" component={AddUser} />
-          <Route exact path="/user/:id" component={User} />
+          <Route exact path="/users/:id" component={User} />
           <Route exact path="/users" component={UsersList} />
           <Route exact path="/add" component={AddReflection} />
           <Route exact path="/reflections/:id" component={Reflection} />
