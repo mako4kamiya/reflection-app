@@ -65,7 +65,7 @@ const UsersList = () => {
                 onClick={() => setActiveUser(user, index)}
                 key={index}
               >
-                {user.title}
+                {user.name}
               </li>
             ))}
         </ul>
