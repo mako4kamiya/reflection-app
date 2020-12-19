@@ -15,11 +15,11 @@ const create = data => {
 };
 
 const update = (id, data) => {
-    return http.put(`/users/${id}/reflections`, data);
+    return http.put(`/reflections/${id}`, data);
 };
 
 const remove = id => {
-    return http.delete(`/users/${id}/reflections`);
+    return http.delete(`/reflections/${id}`);
 };
 
 const findToday = title => {

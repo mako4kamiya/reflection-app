@@ -33,7 +33,7 @@ const User = props => {
   };
 
   const updateUser = () => {
-    UserDataService.update(currentUser.id, currentUser)
+    UserDataService.update(currentUser._id, currentUser)
       .then(response => {
         console.log(response.data);
         setMessage("The user was updated successfully!");
@@ -44,7 +44,7 @@ const User = props => {
   };
 
   const deleteUser = () => {
-    UserDataService.remove(currentUser.id)
+    UserDataService.remove(currentUser._id)
       .then(response => {
         console.log(response.data);
         props.history.push("/users");
@@ -86,7 +86,7 @@ const User = props => {
             <div className="form-group">
               <label htmlFor="vocation">vocation</label>
               <input
-                type="vocation"
+                type="text"
                 className="form-control"
                 id="vocation"
                 name="vocation"
@@ -97,7 +97,7 @@ const User = props => {
             <div className="form-group">
               <label htmlFor="meaning">meaning</label>
               <input
-                type="meaning"
+                type="text"
                 className="form-control"
                 id="meaning"
                 name="meaning"
