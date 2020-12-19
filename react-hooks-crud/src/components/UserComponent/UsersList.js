@@ -95,7 +95,7 @@ const UsersList = () => {
             </div>
             <p>{currentUser.name}</p>
             <Link
-              to={"/user/" + currentUser.id}
+              to={"/users/" + currentUser.id}
               className="badge badge-warning"
             >
               Edit
