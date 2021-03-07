@@ -1,16 +1,18 @@
 module.exports = mongoose => {
     const User = mongoose.model(
-        "user",
+        "User",
         mongoose.Schema(
         {
             name: String,
             password: String,
-            vocation: String,
-            meaning: String
-        },
+            roles: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: "Role"
+                }
+            ]},
         { timestamps: true }
         )
     );
-
     return User;
 };
