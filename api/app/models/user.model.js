@@ -4,6 +4,7 @@ module.exports = mongoose => {
         mongoose.Schema(
         {
             name: String,
+            email:String,
             password: String,
             roles: [
                 {
