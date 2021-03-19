@@ -5,7 +5,7 @@ import "./App.css";
 
 import AuthService from "./services/auth.service";
 import Login from "./components/Login";
-import Register from "./components/Register";
+import Signup from "./components/Signup";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
@@ -97,7 +97,7 @@ return (
             </li>
 
             <li className="nav-item">
-              <Link to={"/register"} className="nav-link">
+              <Link to={"/signup"} className="nav-link">
                 Sign Up
               </Link>
             </li>
@@ -109,7 +109,7 @@ return (
         <Switch>
           <Route exact path={["/", "/home"]} component={Home} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
+          <Route exact path="/signup" component={Signup} />
           <Route exact path="/profile" component={Profile} />
           <Route path="/user" component={BoardUser} />
           <Route path="/mod" component={BoardModerator} />

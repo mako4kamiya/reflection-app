@@ -46,7 +46,7 @@ const vpassword = (value) => {
     }
 };
 
-const Register = (props) => {
+const Signup = (props) => {
     const form = useRef();
     const checkBtn = useRef();
 
@@ -71,7 +71,7 @@ const Register = (props) => {
         setPassword(password);
     };
 
-    const handleRegister = (e) => {
+    const handleSignup = (e) => {
         e.preventDefault();
 
         setMessage("");
@@ -80,7 +80,7 @@ const Register = (props) => {
         form.current.validateAll();
 
         if (checkBtn.current.context._errors.length === 0) {
-            AuthService.register(name, email, password).then(
+            AuthService.signup(name, email, password).then(
                 (response) => {
                 setMessage(response.data.message);
                 setSuccessful(true);
@@ -110,7 +110,7 @@ const Register = (props) => {
                     className="profile-img-card"
                 />
 
-                <Form onSubmit={handleRegister} ref={form}>
+                <Form onSubmit={handleSignup} ref={form}>
                     {!successful && (
                         <div>
                             <div className="form-group">
@@ -171,4 +171,4 @@ const Register = (props) => {
         </div>
     );
 };
-export default Register;
+export default Signup;
