@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 
 import UserService from "../services/user.service";
 
-const Home = () => {
+const BoardUser = () => {
     const [content, setContent] = useState("");
 
     useEffect(() => {
-        UserService.getHomeContent().then(
+        UserService.getUserBoard().then(
             (response) => {
                 setContent(response.data);
             },
@@ -32,4 +32,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default BoardUser;
