@@ -42,7 +42,7 @@ const Login = (props) => {
     if (checkBtn.current.context._errors.length === 0) {
         AuthService.login(name, password).then(
             () => {
-                props.history.push("/home");
+                props.history.push("/user");
                 window.location.reload();
             },
             (error) => {
