@@ -42,7 +42,7 @@ return (
       <nav className="navbar navbar-expand navbar-dark bg-dark">
 
       {currentUser ? (
-        <Link to={"/home"} className="navbar-brand">
+        <Link to={"/user"} className="navbar-brand">
           Reflection App
         </Link>
       ) : (
@@ -105,7 +105,7 @@ return (
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/profile" component={Profile} />
-          <Route path="/home" component={BoardUser} />
+          <Route path="/user" component={BoardUser} />
           <Route path="/mod" component={BoardModerator} />
           <Route path="/admin" component={BoardAdmin} />
         </Switch>
