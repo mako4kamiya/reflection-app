@@ -3,7 +3,7 @@ const Reflection = db.reflection;
 
 // Create and Save a new Reflection
 exports.create = (req, res) => {
-    const user_id = req.params.id;
+    const user_id = req.userId;
     const reflection = new Reflection({
         first_condition: req.body.first_condition,
         realization: req.body.realization,
@@ -11,32 +11,17 @@ exports.create = (req, res) => {
         last_condition: req.body.last_condition,
         user_id:user_id
     });
-    reflection.save((err, reflection) => {
-    if (err) {
-        res.status(500).send({ message: err });
-        return;
-    }
+    reflection.save(reflection)
+    .then(data => {
+        res.send(data);
+    })
+    .catch(err => {
+        res.status(500).send({
+            message:
+            err.message || "Some error occurred while creating the Reflection."
+        });
     });
 };
-
-
-
-// // Retrieve all Reflections from the database with user id.
-// exports.findAll = (req, res) => {
-//     const user_id = req.params.id;
-
-//     Reflection.find({ user_id: user_id})
-//     .then(data => {
-//         res.send(data);
-//     })
-//     // 存在しないuser_idでリクエスト投げると、エラーじゃなくて空の配列が返ってきてしまう。。
-//     .catch(err => {
-//         res.status(500).send({
-//             message:
-//             err.message || "Some error occurred while retrieving reflections."
-//         });
-//     });
-// };
 
 // // Find a single Reflection with an id
 // exports.findOne = (req, res) => {

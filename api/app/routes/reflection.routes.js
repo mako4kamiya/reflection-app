@@ -1,7 +1,15 @@
+const { authJwt } = require("../middlewares");
 const controller = require("../controllers/reflection.controller");
 
 module.exports = function(app) {
-    app.post("/api/:id/create", controller.create);
+    app.use(function(req, res, next) {
+        res.header(
+            "Access-Control-Allow-Headers",
+            "x-access-token, Origin, Content-Type, Accept"
+        );
+        next();
+    });
+    app.post("/api/create", [authJwt.verifyToken], controller.create);
 
     // find todays controller by createdAt
     // app.get("/today", controller.findTodays);
