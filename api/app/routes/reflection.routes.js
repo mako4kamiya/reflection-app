@@ -1,22 +1,20 @@
-module.exports = app => {
-    const reflections = require("../controllers/reflection.controller.js");
+const controller = require("../controllers/reflection.controller");
 
-    var router = require("express").Router();
+module.exports = function(app) {
+    app.post("/api/:id/create", controller.create);
 
-    // find todays Reflections by createdAt
-    router.get("/today", reflections.findTodays);
+    // find todays controller by createdAt
+    // app.get("/today", controller.findTodays);
 
-    // Retrieve a single Reflection with id
-    router.get("/:id", reflections.findOne);
+    // // Retrieve a single Reflection with id
+    // app.get("/:id", controller.findOne);
 
-    // Update a Reflection with id
-    router.put("/:id", reflections.update);
+    // // Update a Reflection with id
+    // app.put("/:id", controller.update);
 
-    // Delete a Reflection with id
-    router.delete("/:id", reflections.delete);
+    // // Delete a Reflection with id
+    // app.delete("/:id", controller.delete);
 
-    // Delete all Reflections
-    router.delete("/", reflections.deleteAll);
-
-    app.use('/api/reflections', router);
+    // // Delete all Reflections
+    // app.delete("/", controller.deleteAll);
 };
