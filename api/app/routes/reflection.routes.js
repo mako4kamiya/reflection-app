@@ -11,6 +11,8 @@ module.exports = function(app) {
     });
     app.post("/api/create", [authJwt.verifyToken], controller.create);
 
+    app.get("/api/reflections", [authJwt.verifyToken], controller.findAll);
+
     // find todays controller by createdAt
     // app.get("/today", controller.findTodays);
 

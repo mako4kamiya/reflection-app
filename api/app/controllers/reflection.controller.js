@@ -23,6 +23,24 @@ exports.create = (req, res) => {
     });
 };
 
+
+
+// Retrieve all Reflections from the database with user id.
+exports.findAll = (req, res) => {
+    const user_id = req.userId;
+    Reflection.find({ user_id: user_id})
+    .then(data => {
+        res.send(data);
+    })
+    // 存在しないuser_idでリクエスト投げると、エラーじゃなくて空の配列が返ってきてしまう。。
+    .catch(err => {
+        res.status(500).send({
+            message:
+            err.message || "Some error occurred while retrieving reflections."
+        });
+    });
+};
+
 // // Find a single Reflection with an id
 // exports.findOne = (req, res) => {
 //     const id = req.params.id;
