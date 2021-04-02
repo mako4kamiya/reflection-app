@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import ReflectionDataService from "../../services/ReflectionService";
-
+import ReflectionService from "../services/reflection.service";
 
 const AddReflection = () => {
   const initialReflectionState = {
@@ -9,7 +8,6 @@ const AddReflection = () => {
     realization: "",
     action: "",
     last_condition:"",
-    user_id:""
   };
   const [reflection, setReflection] = useState(initialReflectionState);
   const [submitted, setSubmitted] = useState(false);
@@ -25,21 +23,18 @@ const AddReflection = () => {
         realization: reflection.realization,
         action: reflection.action,
         last_condition:reflection.last_condition,
-        user_id:reflection.user_id
     };
-
-    ReflectionDataService.create(data)
+    // console.log(data);
+    ReflectionService.create(data)
       .then(response => {
         setReflection({
-          id: response.data.id,
           first_condition: response.data.first_condition,
           realization: response.data.realization,
           action: response.data.action,
           last_condition:response.data.last_condition,
-          user_id:response.data.user_id
         });
         setSubmitted(true);
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch(e => {
         console.log(e);

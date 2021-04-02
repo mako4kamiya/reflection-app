@@ -11,12 +11,12 @@ import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
+import AddReflection from "./components/AddReflection";
 
 // import UserLogin from "./components/UserComponent/UserLogin";
 // import AddUser from "./components/UserComponent/AddUser";
 // import User from "./components/UserComponent/User";
 // import UsersList from "./components/UserComponent/UsersList";
-// import AddReflection from "./components/ReflectionComponent/AddReflection";
 // import Reflection from "./components/ReflectionComponent/Reflection";
 
 function App() {
@@ -77,6 +77,11 @@ return (
             </Link>
           </li>
           <li className="nav-item">
+            <Link to={"/add"} className="nav-link">
+              Add Reflection
+            </Link>
+          </li>
+          <li className="nav-item">
             <a href="/login" className="nav-link" onClick={logOut}>
               LogOut
             </a>
@@ -108,6 +113,7 @@ return (
           <Route path="/user" component={BoardUser} />
           <Route path="/mod" component={BoardModerator} />
           <Route path="/admin" component={BoardAdmin} />
+          <Route path="/add" component={AddReflection} />
         </Switch>
       </div>
     </div>

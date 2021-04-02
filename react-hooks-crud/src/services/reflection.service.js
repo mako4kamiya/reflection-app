@@ -7,14 +7,17 @@ const getAll = () => {
     return axios.get(API_URL + "reflections", { headers: authHeader() });
 };
 
+const create = (data) => {
+    return axios.post(API_URL + "create", data, { headers: authHeader() });
+};
+// const create = (data) => {
+//     return axios.post(API_URL + "/create", data, { headers: authHeader() });
+// };
+
 // const get = id => {
 //     return http.get(`/reflections/${id}`);
 // };
 
-// const create = data => {
-//     return http.post(`/users/5fdc2b3b33d89103b4dba73e/reflections`, data);
-//     // return http.post(`/users/${id}/reflections`, data);
-// };
 
 // const update = (id, data) => {
 //     return http.put(`/reflections/${id}`, data);
@@ -30,9 +33,9 @@ const getAll = () => {
 // };
 
 export default {
-    getAll
+    getAll,
+    create
     // get,
-    // create,
     // update,
     // remove,
     // findToday
