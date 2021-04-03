@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { Button } from 'ui-neumorphism'
+import { overrideThemeVariables } from 'ui-neumorphism'
 import 'ui-neumorphism/dist/index.css'
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./css/App.css";
 
 import AuthService from "./services/auth.service";
 import Login from "./components/Login";
@@ -22,6 +23,20 @@ import AddReflection from "./components/AddReflection";
 // import Reflection from "./components/ReflectionComponent/Reflection";
 
 function App() {
+
+  overrideThemeVariables({
+    '--light-bg': '#f8f9fa',
+    // '--light-bg-dark-shadow': '#ba9294',
+    // '--light-bg-light-shadow': '#ffdcde',
+    // '--dark-bg': '#292E35',
+    // '--dark-bg-dark-shadow': '#21252a',
+    // '--dark-bg-light-shadow': '#313740',
+    // '--primary': '#8672FB',
+    // '--primary-dark': '#4526f9',
+    // '--primary-light': '#c7befd'
+  })
+
+
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -41,15 +56,15 @@ function App() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <nav className="navbar navbar-expand navbar-light bg-light">
 
       {currentUser ? (
         <Link to={"/user"} className="navbar-brand">
-          Reflection App
+          <Button depressed>Reflection App</Button>
         </Link>
       ) : (
         <Link to={"/"} className="navbar-brand">
-          Reflection App
+          <Button depressed>Reflection App</Button>
         </Link>
       )}
 
@@ -75,17 +90,17 @@ function App() {
         <div className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link to={"/profile"} className="nav-link">
-              {currentUser.name}
+              <Button depressed>{currentUser.name}</Button>
             </Link>
           </li>
           <li className="nav-item">
             <Link to={"/add"} className="nav-link">
-              Add Reflection
+              <Button depressed>Add Reflection</Button>
             </Link>
           </li>
           <li className="nav-item">
             <a href="/login" className="nav-link" onClick={logOut}>
-              LogOut
+              <Button depressed>LogOut</Button>
             </a>
           </li>
         </div>
@@ -93,20 +108,18 @@ function App() {
         <div className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link to={"/login"} className="nav-link">
-              Login
+              <Button depressed>Login</Button>
             </Link>
           </li>
 
           <li className="nav-item">
             <Link to={"/signup"} className="nav-link">
-              Sign Up
+              <Button depressed>Sign Up</Button>
             </Link>
           </li>
         </div>
       )}
       </nav>
-
-      <Button />
 
       <div className="container mt-3">
         <Switch>
