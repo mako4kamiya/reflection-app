@@ -26,6 +26,7 @@ function App() {
   overrideThemeVariables({
     '--light-bg': '#d9e7e8',
     '--light-bg-dark-shadow': '#7B9FA2',
+    '--error': '#ec9c85'
     // '--light-bg-light-shadow': '#ffdcde',
     // '--dark-bg': '#292E35',
     // '--dark-bg-dark-shadow': '#21252a',

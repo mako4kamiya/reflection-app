@@ -24,6 +24,10 @@ a{
         color: $coral-pink !important; //リンクホバーした時
     }
 }
+// クロームの補完機能の背景色が変わらないようにするやつ
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s !important;
+}
 
 // なびばー
 nav {
@@ -95,6 +99,33 @@ nav {
         text-align: center;
         a {
             margin-top: 1em;
+        }
+    }
+}
+
+// ろぐいんがめん
+#Login, #Signup {
+    display: flex;
+    justify-content: center;
+    .cardForm {
+        padding: 3em;
+        min-width: 50%;
+        text-align: center;
+        .input, .alert, .button{
+            margin-bottom: 2em;
+        }
+        .alert {
+            div {
+                font-size: 13px;
+                padding-left: unset;
+                &.alertSuccess div {
+                    font-size: initial;
+                    text-align: initial;
+                }
+            }
+        }
+        input{
+            width: 100%;
         }
     }
 }

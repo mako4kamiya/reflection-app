@@ -2,14 +2,17 @@ import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import { Card, TextField, Button, Alert} from 'ui-neumorphism';
 
 import AuthService from "../services/auth.service";
 
 const required = (value) => {
     if (!value) {
         return (
-        <div className="alert alert-danger" role="alert">
-            This field is required!
+        <div className="alert" role="alert">
+            <Alert type='error' flat>
+                This field is required!
+            </Alert>
         </div>
         );
     }
@@ -63,58 +66,34 @@ const Login = (props) => {
 
 
     return (
-        <div className="col-md-12">
-            <div className="card card-container">
-                <img
-                    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                    alt="profile-img"
-                    className="profile-img-card"
-                />
-
+        <div id="Login">
+            <Card className="cardForm">
                 <Form onSubmit={handleLogin} ref={form}>
-                    <div className="form-group">
-                        <label htmlFor="name">Name</label>
-                        <Input
-                            type="text"
-                            className="form-control"
-                            name="name"
-                            value={name}
-                            onChange={onChangeName}
-                            validations={[required]}
-                        />
+                    <div className="input">
+                        <Input className="_U6nBC _2nHt_ " placeholder="Name" type="text" name="name" value={name} onChange={onChangeName} validations={[required]} />
                     </div>
-
-                    <div className="form-group">
-                        <label htmlFor="password">Password</label>
-                        <Input
-                            type="password"
-                            className="form-control"
-                            name="password"
-                            value={password}
-                            onChange={onChangePassword}
-                            validations={[required]}
-                        />
+                    <div className="input">
+                        <Input className="_U6nBC _2nHt_ " placeholder="Password" type="password" name="password" value={password} onChange={onChangePassword} validations={[required]}/>
                     </div>
-
-                    <div className="form-group">
-                    <button className="btn btn-primary btn-block" disabled={loading}>
+                    <Button className="button" disabled={loading}>
                         {loading && (
-                            <span className="spinner-border spinner-border-sm"></span>
+                            <span></span>
                         )}
                         <span>Login</span>
-                        </button>
-                    </div>
+                    </Button>
 
                     {message && (
-                        <div className="form-group">
-                            <div className="alert alert-danger" role="alert">
-                                {message}
+                        <div>
+                            <div className="alert" role="alert">
+                                <Alert type='error' flat>
+                                    {message}
+                                </Alert>
                             </div>
                         </div>
                     )}
                     <CheckButton style={{ display: "none" }} ref={checkBtn} />
                 </Form>
-            </div>
+            </Card>
         </div>
     );
 };

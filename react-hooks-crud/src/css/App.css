@@ -19,6 +19,11 @@ a ._cL4RU:hover {
   color: #ec9c85 !important;
 }
 
+input:-webkit-autofill {
+  -webkit-transition: background-color 5000s ease-in-out 0s !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -120,4 +125,37 @@ nav .nav-right {
 
 #Public .contents-right a {
   margin-top: 1em;
+}
+
+#Login, #Signup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#Login .cardForm, #Signup .cardForm {
+  padding: 3em;
+  min-width: 50%;
+  text-align: center;
+}
+
+#Login .cardForm .input, #Login .cardForm .alert, #Login .cardForm .button, #Signup .cardForm .input, #Signup .cardForm .alert, #Signup .cardForm .button {
+  margin-bottom: 2em;
+}
+
+#Login .cardForm .alert div, #Signup .cardForm .alert div {
+  font-size: 13px;
+  padding-left: unset;
+}
+
+#Login .cardForm .alert div.alertSuccess div, #Signup .cardForm .alert div.alertSuccess div {
+  font-size: initial;
+  text-align: initial;
+}
+
+#Login .cardForm input, #Signup .cardForm input {
+  width: 100%;
 }
