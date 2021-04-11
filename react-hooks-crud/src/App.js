@@ -24,8 +24,8 @@ import AddReflection from "./components/AddReflection";
 function App() {
 
   overrideThemeVariables({
-    // '--light-bg': '#f8f9fa',
-    // '--light-bg-dark-shadow': '#ba9294',
+    '--light-bg': '#d9e7e8',
+    '--light-bg-dark-shadow': '#7B9FA2',
     // '--light-bg-light-shadow': '#ffdcde',
     // '--dark-bg': '#292E35',
     // '--dark-bg-dark-shadow': '#21252a',

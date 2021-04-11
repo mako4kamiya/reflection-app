@@ -11,6 +11,14 @@ main {
   padding-top: 9%;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
+a ._cL4RU:hover {
+  color: #ec9c85 !important;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,10 +31,6 @@ nav {
           align-items: center;
   margin: 0 10%;
   padding: 1em 0;
-}
-
-nav a:hover {
-  text-decoration: none;
 }
 
 nav .nav-left {
@@ -42,11 +46,78 @@ nav .nav-right {
 }
 
 #Public {
-  margin: 0 5%;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+#Public .cardContents {
+  padding-top: 3em;
+  min-height: 25em;
+}
+
+#Public .cardContents h4, #Public .cardContents h6, #Public .cardContents p {
+  margin-bottom: 1em;
+}
+
+#Public .cardContents p {
+  color: #2a4446;
+}
+
+#Public .contents-left {
+  float: left;
+  position: relative;
+}
+
+#Public .contents-left .cardContents .sns {
+  margin-top: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#Public .contents-left .cardContents .sns a div {
+  color: #eabb56;
+}
+
+#Public .contents-left .cardContents .sns svg {
+  background-color: unset;
+}
+
+#Public .contents-left .cardAvatar {
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: -50px;
+  left: 6px;
+}
+
+#Public .contents-left .cardAvatar .ayumiAvatar {
+  width: 6em;
+  height: 6em;
+}
+
+#Public .contents-left .cardAvatar .ayumiAvatar img {
+  width: 6.5em;
+  height: 6.5em;
+}
+
+#Public .contents-right {
+  float: right;
+  text-align: center;
+}
+
+#Public .contents-right a {
+  margin-top: 1em;
 }
