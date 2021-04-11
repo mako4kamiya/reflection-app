@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import { Button } from 'ui-neumorphism'
-import { overrideThemeVariables } from 'ui-neumorphism'
-import 'ui-neumorphism/dist/index.css'
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from 'ui-neumorphism';
+import { overrideThemeVariables } from 'ui-neumorphism';
+import 'ui-neumorphism/dist/index.css';
 import "./css/App.css";
 
 import AuthService from "./services/auth.service";
@@ -25,7 +24,7 @@ import AddReflection from "./components/AddReflection";
 function App() {
 
   overrideThemeVariables({
-    '--light-bg': '#f8f9fa',
+    // '--light-bg': '#f8f9fa',
     // '--light-bg-dark-shadow': '#ba9294',
     // '--light-bg-light-shadow': '#ffdcde',
     // '--dark-bg': '#292E35',
@@ -56,72 +55,72 @@ function App() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand navbar-light bg-light">
+      <nav>
 
       {currentUser ? (
-        <Link to={"/user"} className="navbar-brand">
-          <Button depressed>Reflection App</Button>
+        <Link to={"/user"}>
+          <Button text>Reflection App</Button>
         </Link>
       ) : (
-        <Link to={"/"} className="navbar-brand">
-          <Button depressed>Reflection App</Button>
+        <Link to={"/"}>
+          <Button text>Reflection App</Button>
         </Link>
       )}
 
-      <div className="navbar-nav mr-auto">
+      <div className="nav-left">
       {showModeratorBoard && (
-        <li className="nav-item">
-          <Link to={"/mod"} className="nav-link">
-            Moderator Board
+        <li>
+          <Link to={"/mod"}>
+            <Button text>Moderator Board</Button>
           </Link>
         </li>
       )}
 
       {showAdminBoard && (
-        <li className="nav-item">
-          <Link to={"/admin"} className="nav-link">
-            Admin Board
+        <li>
+          <Link to={"/admin"}>
+            <Button text>Admin Board</Button>
           </Link>
         </li>
       )}
       </div>
 
       {currentUser ? (
-        <div className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Link to={"/profile"} className="nav-link">
-              <Button depressed>{currentUser.name}</Button>
+        <div className="nav-right">
+          <li>
+            <Link to={"/profile"}>
+              <Button text>{currentUser.name}</Button>
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to={"/add"} className="nav-link">
-              <Button depressed>Add Reflection</Button>
+          <li>
+            <Link to={"/add"}>
+              <Button text>Add Reflection</Button>
             </Link>
           </li>
-          <li className="nav-item">
-            <a href="/login" className="nav-link" onClick={logOut}>
-              <Button depressed>LogOut</Button>
+          <li>
+            <a href="/login" onClick={logOut}>
+              <Button text>LogOut</Button>
             </a>
           </li>
         </div>
       ) : (
-        <div className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Link to={"/login"} className="nav-link">
-              <Button depressed>Login</Button>
+        <div className="nav-right">
+          <li>
+            <Link to={"/login"}>
+              <Button text>Login</Button>
             </Link>
           </li>
 
-          <li className="nav-item">
-            <Link to={"/signup"} className="nav-link">
-              <Button depressed>Sign Up</Button>
+          <li>
+            <Link to={"/signup"}>
+              <Button text>Sign Up</Button>
             </Link>
           </li>
         </div>
       )}
       </nav>
 
-      <div className="container mt-3">
+      <main>
         <Switch>
           <Route exact path={["/", "/public"]} component={Public} />
           <Route exact path="/login" component={Login} />
@@ -132,7 +131,7 @@ function App() {
           <Route path="/admin" component={BoardAdmin} />
           <Route path="/add" component={AddReflection} />
         </Switch>
-      </div>
+      </main>
     </div>
   );
 };
