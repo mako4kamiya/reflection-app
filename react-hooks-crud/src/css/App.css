@@ -50,6 +50,11 @@ nav {
   padding: 1em 0;
 }
 
+nav button {
+  font-size: 20px !important;
+  font-weight: unset !important;
+}
+
 nav .nav-left {
   -webkit-box-flex: 1;
       -ms-flex: 1;

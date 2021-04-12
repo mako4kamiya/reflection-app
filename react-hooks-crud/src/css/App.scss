@@ -40,6 +40,10 @@ input:-webkit-autofill {
 
 // なびばー
 nav {
+    button {
+        font-size: 20px !important;
+        font-weight: unset !important;
+    }
     display: flex;
     justify-content: space-between;
     align-items: center;
