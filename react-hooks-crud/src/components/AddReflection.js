@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import ReflectionService from "../services/reflection.service";
+import { TextArea, H1, H2, H5, Button, Alert} from 'ui-neumorphism';
+import {Icon} from '@mdi/react';
+import { mdiCheckCircle } from '@mdi/js';
 
 const AddReflection = () => {
   const initialReflectionState = {
@@ -48,21 +51,24 @@ const AddReflection = () => {
 
   return (
   
-    <div className="submit-form">
+    <div id="AddReflection">
+      <H1>Add Reflection</H1>
       {submitted ? (
-        <div>
-          <h4>You submitted successfully!</h4>
-          <button className="btn btn-success" onClick={newReflection}>
-            Add
-          </button>
-        </div>
+        <section>
+          <Alert type='success' icon={<Icon path={mdiCheckCircle} size={1} />}>
+              You submitted successfully! Please back to home.
+          </Alert>
+        </section>
       ) : (
-        <div>
-          <div className="form-group">
-            <label htmlFor="first_condition">first_condition</label>
-            <input
+        <section>
+          <div className="item">
+            <H5>
+              <label htmlFor="first_condition">①.最初の状態</label>
+            </H5>
+            <textarea
+              className="_U6nBC _2nHt_ "
+              placeholder="最初の状態"
               type="text"
-              className="form-control"
               id="first_condition"
               required
               value={reflection.first_condition}
@@ -70,23 +76,14 @@ const AddReflection = () => {
               name="first_condition"
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="realization">realization</label>
-            <input
+          <div className="item">
+            <H5>
+              <label htmlFor="action">③.24時間以内に取り組む第一歩</label>
+            </H5>
+            <textarea
+              className="_U6nBC _2nHt_ "
+              placeholder="24時間以内に取り組む第一歩"
               type="text"
-              className="form-control"
-              id="realization"
-              required
-              value={reflection.realization}
-              onChange={handleInputChange}
-              name="realization"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="action">action</label>
-            <input
-              type="text"
-              className="form-control"
               id="action"
               required
               value={reflection.action}
@@ -94,11 +91,29 @@ const AddReflection = () => {
               name="action"
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="last_condition">last_condition</label>
-            <input
+          <div className="item">
+            <H5>
+              <label htmlFor="realization">②.気づき・発見</label>
+            </H5>
+            <textarea
+              className="_U6nBC _2nHt_ "
+              placeholder="気づき・発見"
               type="text"
-              className="form-control"
+              id="realization"
+              required
+              value={reflection.realization}
+              onChange={handleInputChange}
+              name="realization"
+            />
+          </div>
+          <div className="item">
+            <H5>
+              <label htmlFor="last_condition">④.結果の状態</label>
+            </H5>
+            <textarea
+              className="_U6nBC _2nHt_ "
+              placeholder="結果の状態"
+              type="text"
               id="last_condition"
               required
               value={reflection.last_condition}
@@ -106,10 +121,12 @@ const AddReflection = () => {
               name="last_condition"
             />
           </div>
-          <button onClick={saveReflection} className="btn btn-success">
-            Submit
-          </button>
-        </div>
+          <div class="item">
+            <Button onClick={saveReflection}>
+              Submit
+            </Button>
+          </div>
+        </section>
       )}
     </div>
 

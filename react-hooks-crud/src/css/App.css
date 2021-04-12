@@ -8,7 +8,7 @@ li {
 
 main {
   margin: 0 10%;
-  padding-top: 9%;
+  padding-top: 3em;
 }
 
 a:hover {
@@ -17,6 +17,18 @@ a:hover {
 
 a ._cL4RU:hover {
   color: #ec9c85 !important;
+}
+
+h1 {
+  font-size: 50px !important;
+}
+
+h2 {
+  font-size: 45px !important;
+}
+
+h3 {
+  font-size: 40px !important;
 }
 
 input:-webkit-autofill {
@@ -48,6 +60,10 @@ nav .nav-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+nav .nav-right li {
+  margin-right: 1em;
 }
 
 #Public {
@@ -151,11 +167,46 @@ nav .nav-right {
   padding-left: unset;
 }
 
-#Login .cardForm .alert div.alertSuccess div, #Signup .cardForm .alert div.alertSuccess div {
-  font-size: initial;
-  text-align: initial;
-}
-
 #Login .cardForm input, #Signup .cardForm input {
   width: 100%;
+}
+
+#AddReflection section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#AddReflection section .item {
+  min-width: 45%;
+}
+
+#AddReflection section .item:nth-child(odd) {
+  margin-right: 1em;
+}
+
+#AddReflection section .item:last-child {
+  margin: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#AddReflection section .item h5 {
+  padding: 0.5em 0;
+}
+
+#AddReflection section .item textarea {
+  width: 100%;
+  height: 12em;
+  resize: none;
+  padding: 1em;
 }

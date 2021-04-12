@@ -14,7 +14,7 @@ li {
 }
 main {
     margin: 0 10%;
-    padding-top: 9%;
+    padding-top: 3em;
 }
 a{
     &:hover {
@@ -23,6 +23,15 @@ a{
     ._cL4RU:hover {
         color: $coral-pink !important; //リンクホバーした時
     }
+}
+h1 {
+    font-size: 50px !important;
+}
+h2 {
+    font-size: 45px !important;
+}
+h3 {
+    font-size: 40px !important;
 }
 // クロームの補完機能の背景色が変わらないようにするやつ
 input:-webkit-autofill {
@@ -41,6 +50,9 @@ nav {
     }
     .nav-right {
         display: flex;
+        li {
+            margin-right: 1em;
+        }
     }
 }
 
@@ -103,7 +115,7 @@ nav {
     }
 }
 
-// ろぐいんがめん
+// ろぐいん・さいんあっぷがめん
 #Login, #Signup {
     display: flex;
     justify-content: center;
@@ -118,14 +130,39 @@ nav {
             div {
                 font-size: 13px;
                 padding-left: unset;
-                &.alertSuccess div {
-                    font-size: initial;
-                    text-align: initial;
-                }
             }
         }
         input{
             width: 100%;
+        }
+    }
+}
+
+// リフレクション登録画面
+#AddReflection {
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .item {
+            min-width: 45%;
+            &:nth-child(odd) {
+                margin-right: 1em;
+            }
+            &:last-child {
+                margin: 1em 0;
+                display: flex;
+                justify-content: center;
+            }
+            h5 {
+                padding: 0.5em 0;
+            }
+            textarea {
+                width: 100%;
+                height: 12em;
+                resize: none;
+                padding: 1em;
+            }
         }
     }
 }

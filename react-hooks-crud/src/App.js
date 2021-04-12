@@ -26,7 +26,10 @@ function App() {
   overrideThemeVariables({
     '--light-bg': '#d9e7e8',
     '--light-bg-dark-shadow': '#7B9FA2',
-    '--error': '#ec9c85'
+    '--error': '#ec9c85',
+    '--light-pink': '#f1e1d9',
+    '--coral-pink': '#ec9c85',
+    '--light-yellow': '#eabb56'
     // '--light-bg-light-shadow': '#ffdcde',
     // '--dark-bg': '#292E35',
     // '--dark-bg-dark-shadow': '#21252a',
@@ -90,7 +93,7 @@ function App() {
         <div className="nav-right">
           <li>
             <Link to={"/profile"}>
-              <Button text>{currentUser.name}</Button>
+              <Button text color="var(--light-yellow)" >{currentUser.name}</Button>
             </Link>
           </li>
           <li>
