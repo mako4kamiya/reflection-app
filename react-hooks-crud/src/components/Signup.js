@@ -3,7 +3,9 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
-import { Card, TextField, Button, Alert} from 'ui-neumorphism';
+import { Card, Button, Alert} from 'ui-neumorphism';
+import {Icon} from '@mdi/react';
+import { mdiCheckCircle } from '@mdi/js';
 
 import AuthService from "../services/auth.service";
 
@@ -112,43 +114,42 @@ const Signup = (props) => {
 
     return (
         <div id="Signup">
-            <Card className="cardForm">
-                <Form onSubmit={handleSignup} ref={form}>
-                    {!successful && (
-                        <div>
-                            <div className="input">
-                                <Input className="_U6nBC _2nHt_ " placeholder="Name" type="text" name="name" value={name} onChange={onChangeName} validations={[required, vname]} />
-                            </div>
-                            <div className="input">
-                                <Input className="_U6nBC _2nHt_ " placeholder="Email" type="text" name="email" value={email} onChange={onChangeEmail} validations={[required, vEmail]} />
-                            </div>
-                            <div className="input">
-                                <Input className="_U6nBC _2nHt_ " placeholder="Password" type="password" name="password" value={password} onChange={onChangePassword} validations={[required, vpassword]} />
-                            </div>
-                            <Button className="button">
-                                <span>Sign Up</span>
-                            </Button>
+        { successful ? (
+            <div>
+                <Alert type='success' icon={<Icon path={mdiCheckCircle} size={1} />}>
+                    {message} please lonin.
+                </Alert>
+            </div>
+        ):(
+        <Card className="cardForm">
+            <Form onSubmit={handleSignup} ref={form}>
+                    <div>
+                        <div className="input">
+                            <Input className="_U6nBC _2nHt_ " placeholder="Name" type="text" name="name" value={name} onChange={onChangeName} validations={[required, vname]} />
                         </div>
-                    )}
-
-                    {message && (
-                        <div>
-                            <div className="alert" role="alert">
-                            { successful ? (
-                                <Alert className="alertSuccess" type='success' flat dense>
-                                    {message}<br/><br/>please lonin.
-                                </Alert>
-                            ):(
-                                <Alert type='error' flat dense>
-                                    {message}
-                                </Alert>
-                            )}
-                            </div>
+                        <div className="input">
+                            <Input className="_U6nBC _2nHt_ " placeholder="Email" type="text" name="email" value={email} onChange={onChangeEmail} validations={[required, vEmail]} />
                         </div>
-                    )}
-                    <CheckButton style={{ display: "none" }} ref={checkBtn} />
-                </Form>
-            </Card>
+                        <div className="input">
+                            <Input className="_U6nBC _2nHt_ " placeholder="Password" type="password" name="password" value={password} onChange={onChangePassword} validations={[required, vpassword]} />
+                        </div>
+                        <Button className="button">
+                            <span>Sign Up</span>
+                        </Button>
+                    </div>
+                {message && (
+                    <div>
+                        <div className="alert" role="alert">
+                            <Alert type='error' flat dense>
+                                {message}
+                            </Alert>
+                        </div>
+                    </div>
+                )}
+                <CheckButton style={{ display: "none" }} ref={checkBtn} />
+            </Form>
+        </Card>
+        )}
         </div>
     );
 };
