@@ -166,3 +166,39 @@ nav {
         }
     }
 }
+
+// BoardUser
+#BoardUser {
+    h1 {
+        padding-bottom: 0.5em;
+    }
+    section {
+        display: flex;
+        justify-content: space-around;
+        .contents {
+            min-width: 30%;
+            h5 {
+                padding-bottom: 1em;
+            }
+            h6 {
+                padding-bottom: 0.5em;
+            }
+            p {
+                padding-bottom: 2em;
+                color: $dark-blue;
+            }
+            ul {
+                color: $dark-blue;
+                li {
+                    padding: 12px 16px;
+                    &.active {
+                        color: $coral-pink;
+                        border-radius: 4px;
+                        box-shadow: inset -2px -2px 3px #fff, inset 2px 2px 3px #7B9FA2;
+                        transition: box-shadow 0.2s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}

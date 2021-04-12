@@ -210,3 +210,51 @@ nav .nav-right li {
   resize: none;
   padding: 1em;
 }
+
+#BoardUser h1 {
+  padding-bottom: 0.5em;
+}
+
+#BoardUser section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#BoardUser section .contents {
+  min-width: 30%;
+}
+
+#BoardUser section .contents h5 {
+  padding-bottom: 1em;
+}
+
+#BoardUser section .contents h6 {
+  padding-bottom: 0.5em;
+}
+
+#BoardUser section .contents p {
+  padding-bottom: 2em;
+  color: #2a4446;
+}
+
+#BoardUser section .contents ul {
+  color: #2a4446;
+}
+
+#BoardUser section .contents ul li {
+  padding: 12px 16px;
+}
+
+#BoardUser section .contents ul li.active {
+  color: #ec9c85;
+  border-radius: 4px;
+  -webkit-box-shadow: inset -2px -2px 3px #fff, inset 2px 2px 3px #7B9FA2;
+          box-shadow: inset -2px -2px 3px #fff, inset 2px 2px 3px #7B9FA2;
+  -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+}
