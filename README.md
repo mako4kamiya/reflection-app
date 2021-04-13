@@ -46,3 +46,13 @@ https://xd.adobe.com/view/3d1880df-ad07-4909-98e9-662e1092f6fa-684b/
 ### 使用しているAPI,SDK,ライブラリなど
 - ぐるなびAPI
 
+<details>
+  <summary>
+    見出し部分。ここをクリック。
+  </summary>
+  <div>
+
+ここが隠れてる部分。
+
+  </div>
+</details>
