@@ -24,7 +24,38 @@ Chrome 89.0.4389.114
 - 権限ごとの画面表示機能
 
 ### ルーティング・DB設計
+#### Node.js
+| HTTP | url              | 意味                     |
+|---   |---               |---                       | 
+| POST | /api/auth/signup | 新規登録                  |
+| POST | /api/auth/signin | ログイン                  |
+| POST | /api/test/all    | パブリックコンテンツの取得  |
+| GET  | /api/test/user   | ユーザーコンテンツの取得    |
+| GET  | /api/test/mod    | モデレーターコンテンツの取得 |
+| GET  | /api/test/admin  | 管理者コンテンツの取得      |
+| GET  | /api/reflections | リフレクションの取得        |
+| GET  | /api/create      | リフレクションの登録        |
 
+#### React.js
+| HTTP | url              | 意味                     |
+|---   |---               |---                       | 
+| POST | /api/auth/signup | 新規登録                  |
+| POST | /api/auth/signin | ログイン                  |
+| POST | /api/test/all    | パブリックコンテンツの取得  |
+| GET  | /api/test/user   | ユーザーコンテンツの取得    |
+| GET  | /api/test/mod    | モデレーターコンテンツの取得 |
+| GET  | /api/test/admin  | 管理者コンテンツの取得      |
+| GET  | /api/reflections | リフレクションの取得        |
+| GET  | /api/create      | リフレクションの登録        |
+
+#### データベース
+| Users Collection | Role Collection | Reflection collection |
+|---               |---              |---                    |
+| name             | name            | user_id               |
+| email            |                 | first_condition       |
+| password         |                 | realization           |
+| roles            |                 | action                |
+|                  |                 | last_condition        |
 
 
 ## このアプリについて
@@ -37,10 +68,14 @@ Chrome 89.0.4389.114
 コーチはメンバーの記録を見ることができる。
 
 ### コンセプト
+ユーザーが使いやすいReflection App（振り返りアプリ）
 
 ### こだわったポイント
+- ユーザーが使いやすい
 
 ### デザイン面でこだわったポイント
+- クライアントの雰囲気に合わせて、シンプルで新鮮な印象を与えるNeumorphismデザインを採用した
+
 
 ### 自己評価
 
